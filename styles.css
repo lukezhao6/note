@@ -70,6 +70,7 @@ header {
   border-radius: 4px;
   transition: background-color 0.3s;
   border: 1px solid rgb(255, 254, 254); /* 设置边框为黑色，1像素宽 */
+  margin-top: 5px;
 }
 
 .sidebar ul li:hover {
