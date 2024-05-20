@@ -51,7 +51,7 @@ body {
   }
   .note:hover {
     background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(183, 187, 119, 0.15);
+    box-shadow: 0 4px 8px rgba(89, 172, 11, 0.15);
   }
   .note h3 {
     margin: 0;
