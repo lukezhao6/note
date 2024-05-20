@@ -70,8 +70,19 @@
     <script>
       const notes = {
         git: [
-          { title: "git初始化", content: "这是第一个工作笔记的内容。" },
-          { title: "工作笔记2", content: "这是第二个工作笔记的内容。" },
+          {
+            title: "git配置代理",
+            content:
+              "git config --global http.https://github.com.proxy socks5h://127.0.0.1:7890",
+          },
+          {
+            title: "git配置代理",
+            content: "git config --global http.proxy http://127.0.0.1:7890",
+          },
+          {
+            title: "git配置代理",
+            content: "git config --global https.proxy https://127.0.0.1:7890",
+          },
         ],
         personal: [
           { title: "个人笔记1", content: "这是第一个个人笔记的内容。" },
