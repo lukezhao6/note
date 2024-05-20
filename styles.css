@@ -94,7 +94,7 @@ header {
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #d8d0d0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
