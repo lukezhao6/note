@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记管理系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover {
+            background-color: #575757;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .note {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .note h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li onclick="showCategory('git')">git</li>
+                <li onclick="showCategory('personal')">个人笔记</li>
+                <li onclick="showCategory('study')">学习笔记</li>
+            </ul>
+        </div>
+        <div class="content" id="notesContent">
+            <!-- Notes will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        const notes = {
+            git: [
+                { title: "git初始化", content: "这是第一个工作笔记的内容。" },
+                { title: "工作笔记2", content: "这是第二个工作笔记的内容。" }
+            ],
+            personal: [
+                { title: "个人笔记1", content: "这是第一个个人笔记的内容。" },
+                { title: "个人笔记2", content: "这是第二个个人笔记的内容。" }
+            ],
+            study: [
+                { title: "学习笔记1", content: "这是第一个学习笔记的内容。" },
+                { title: "学习笔记2", content: "这是第二个学习笔记的内容。" }
+            ]
+        };
+
+        function showCategory(category) {
+            const notesContent = document.getElementById('notesContent');
+            notesContent.innerHTML = '';
+            notes[category].forEach(note => {
+                const noteDiv = document.createElement('div');
+                noteDiv.className = 'note';
+                noteDiv.innerHTML = `<h3>${note.title}</h3><p>${note.content}</p>`;
+                notesContent.appendChild(noteDiv);
+            });
+        }
+
+        // 默认显示工作笔记
+        showCategory('git');
+    </script>
+</body>
+</html>
