@@ -27,7 +27,7 @@ header {
 }
 
 #globalSearch {
-  flex: 1;
+  /* flex: 1; */
   width: 50%; /* Change width to 50% to occupy half of the total width */
   padding: 10px;
   font-size: 16px;
