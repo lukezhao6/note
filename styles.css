@@ -2,9 +2,7 @@ body {
   margin: 0; /* 移除默认的 body 外边距 */
   overflow-y: hidden; /* 防止水平滚动条 */
   font-family: Arial, sans-serif; /* 设置默认字体 */
-  background-image: url('bj.gif'); /* 替换 'your-image.jpg' 为你想要的图片的路径 */
-  background-size: cover; /* 使背景图片覆盖整个页面 */
-  background-repeat: no-repeat; /* 禁止背景图片重复 */
+
 }
 
 header {
@@ -15,6 +13,9 @@ header {
   border-bottom: 1px solid #ddd;
   text-align: center;
   margin-top: 2px;
+  background-image: url('bj.gif'); /* 替换 'your-image.jpg' 为你想要的图片的路径 */
+  background-size: cover; /* 使背景图片覆盖整个页面 */
+  background-repeat: no-repeat; /* 禁止背景图片重复 */
 }
 .artistic-title {
   margin: 10px;
