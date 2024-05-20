@@ -94,7 +94,7 @@ header {
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #eee6e6;
+  background-color: #e7e7e7;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -115,12 +115,6 @@ header {
   margin: 0;
   flex: 1;
   color: #000000;
-  border: 2px solid #999999;
-  padding: 10px; /* 这是为了让文字离边框有些距离 */
-  background-color: #f0f0f0; /* 添加一个背景色 */
-  font-family: monospace; /* 使用等宽字体 */
-  white-space: pre-wrap; /* 保留空白符和换行 */
-  overflow-x: auto; /* 横向内容溢出时显示滚动条 */
 }
 
 .copy-button {
