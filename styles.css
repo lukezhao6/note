@@ -25,10 +25,11 @@ header {
 }
 .search-container {
   text-align: center; /* 将搜索容器居中对齐 */
-  margin-top: 20px;
+  width: 50%; /* 设置搜索容器宽度占屏幕的一半 */
+  margin: 0 auto; /* 将搜索容器居中对齐 */
 }
 #globalSearch {
-  width: 50%; /* 设置搜索框宽度占屏幕的一半 */
+  width: 100%; /* 设置搜索框宽度占屏幕的一半 */
   padding: 10px;
   font-size: 16px;
   border: 2px solid #444; /* 增加边框厚度使其更加清晰 */
