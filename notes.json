@@ -1,21 +1,15 @@
 {
     "git": [
-      {
-        "title": "git配置代理",
+      {"title": "git配置代理",
         "content": "git config --global http.https://github.com.proxy socks5h://127.0.0.1:7890"
       },
-      {
-        "title": "git配置代理",
+      {"title": "git配置代理",
         "content": "git config --global http.proxy http://127.0.0.1:7890"
       },
-      {
-        "title": "git配置代理",
+      {"title": "git配置代理",
         "content": "git config --global https.proxy https://127.0.0.1:7890"
       },
-      {
-        "title": "配置用户的name：",
-        "content": "git config --global user.name \"用户名\""
-      },
+      {"title": "配置用户的name：","content": "git config --global user.name \"用户名\""},
       { "title": "配置用户的email:","content": "git config -- global user.email \"XXXXXXXX.@qq.com\""},
       { "title": "创建git存储库", "content": "git init" },
       { "title": "克隆现有的git存储库", "content": "git clone [url]" },
