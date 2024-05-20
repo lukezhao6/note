@@ -25,14 +25,18 @@ header {
   height: 40px;
   margin-right: 20px;
 }
-
+.search-container {
+  text-align: center; /* 将搜索容器居中对齐 */
+  margin-top: 20px;
+}
 #globalSearch {
-  /* flex: 1; */
-  width: 50%; /* Change width to 50% to occupy half of the total width */
+  width: 50%; /* 设置搜索框宽度占屏幕的一半 */
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 2px solid #444; /* 增加边框厚度使其更加清晰 */
   border-radius: 4px;
+  display: block;
+  margin: 0 auto; /* 将搜索框居中对齐 */
 }
 
 .container {
