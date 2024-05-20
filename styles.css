@@ -50,7 +50,7 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
   }
   .note:hover {
-    background-color: #0fc24b;
+    background-color: #9fe0b5;
     box-shadow: 0 4px 8px rgba(89, 172, 11, 0.15);
   }
   .note h3 {
