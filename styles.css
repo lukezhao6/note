@@ -1,58 +1,62 @@
 body {
   margin: 0; /* 移除默认的 body 外边距 */
   overflow-y: hidden; /* 防止水平滚动条 */
+  font-family: Arial, sans-serif; /* 设置默认字体 */
 }
 
 header {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 2px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2px;
+  background-image: url('bj.gif'); /* 替换 'your-image.jpg' 为你想要的图片的路径 */
+  background-size: cover; /* 使背景图片覆盖整个页面 */
+  background-repeat: no-repeat; /* 禁止背景图片重复 */
 }
 .artistic-title {
-  font-size: 2.5em;
+  margin: 10px;
+  font-size: 5em;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   color: #333;
   text-shadow: 2px 2px 4px #aaa;
 }
-.logo {
-  height: 40px;
-  margin-right: 20px;
-}
 .search-container {
-  text-align: center; /* 将搜索容器居中对齐 */
+  /* text-align: center; 将搜索容器居中对齐 */
   width: 50%; /* 设置搜索容器宽度占屏幕的一半 */
-  margin: 0 auto; /* 将搜索容器居中对齐 */
+  margin: 0 150px; /* 设置搜索容器左右外边距 */
 }
 #globalSearch {
   width: 100%; /* 设置搜索框宽度占屏幕的一半 */
-  padding: 10px;
+  padding: 10px 20px; /* 增加内边距使其更加美观 */
   font-size: 16px;
   border: 2px solid #444; /* 增加边框厚度使其更加清晰 */
   border-radius: 4px;
   display: block;
-  margin: 0 auto; /* 将搜索框居中对齐 */
+  /* margin: 0 auto; 将搜索框居中对齐 */
 }
 
 .container {
   display: flex;
-  flex-direction: row;
-  height: calc(100vh - 60px); /* Adjusted for header height */
+  height: calc(100vh - 100px); /* Adjust height based on header height */
+  border: 1px solid #2980b9; /* 设置边框为蓝色，1像素宽 */
 }
 
 .sidebar {
   width: 250px;
   background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   transition: width 0.3s, padding 0.3s;
   font-size: 20px;
   border-right: 1px solid #ddd;
+  overflow-y: auto; /* 侧边栏内容过多时增加滚动条 */
+  border: #2980b9;
+
 }
 
 .sidebar ul {
@@ -61,10 +65,11 @@ header {
 }
 
 .sidebar ul li {
-  padding: 15px;
+  padding: 10px 30px;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
+  border: 1px solid rgb(255, 254, 254); /* 设置边框为黑色，1像素宽 */
 }
 
 .sidebar ul li:hover {
