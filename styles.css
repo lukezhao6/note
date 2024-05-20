@@ -1,8 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7f6;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* 移除默认的 body 外边距 */
+  overflow-y: hidden; /* 防止水平滚动条 */
 }
 
 header {
