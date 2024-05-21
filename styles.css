@@ -97,10 +97,11 @@ header {
 .right-sidebar ul li {
   padding: 12px; /* 增加行间距 */
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
   margin-bottom: 8px; /* 增加间距 */
   border-radius: 4px;
   border: 1px solid transparent; /* 初始透明边框用于过渡效果 */
+  background-color: #e0e0e0; /* 初始背景颜色 */
 }
 
 .right-sidebar ul li:hover {

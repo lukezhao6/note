@@ -8,7 +8,7 @@ async function showCategory(category) {
   const notesContent = document.getElementById("notesContent");
   const rightSidebar = document.getElementById("rightSidebar");
   notesContent.innerHTML = "";
-  rightSidebar.innerHTML = "";
+  rightSidebar.innerHTML = "<ul></ul>";
 
   const notes = await fetchNotes();
   const subcategories = notes[category];
@@ -35,16 +35,16 @@ async function showCategory(category) {
           behavior: "smooth",
         });
     };
-    rightSidebar.appendChild(sidebarItem);
+    rightSidebar.querySelector("ul").appendChild(sidebarItem);
 
     subcategoryNotes.forEach((note, index) => {
       const noteDiv = document.createElement("div");
       noteDiv.className = "note";
       noteDiv.innerHTML = `
-          <h3>${note.title}</h3>
-          <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
-          <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
-        `;
+        <h3>${note.title}</h3>
+        <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
+        <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
+      `;
       notesContent.appendChild(noteDiv);
     });
   }
@@ -62,13 +62,13 @@ async function showCategory(category) {
         break;
       }
     }
-    const rightSidebarItems = rightSidebar.getElementsByTagName("li");
-    for (const item of rightSidebarItems) {
+    const rightSidebarItems = rightSidebar.querySelectorAll("li");
+    rightSidebarItems.forEach((item) => {
       item.classList.remove("active");
       if (item.textContent === activeItem) {
         item.classList.add("active");
       }
-    }
+    });
   };
 }
 
