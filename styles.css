@@ -1,137 +1,159 @@
 body {
-  margin: 0; /* 移除默认的 body 外边距 */
-  overflow-y: hidden; /* 防止水平滚动条 */
-  font-family: Arial, sans-serif; /* 设置默认字体 */
+    margin: 0; /* 移除默认的 body 外边距 */
+    overflow-y: hidden; /* 防止水平滚动条 */
+    font-family: Arial, sans-serif; /* 设置默认字体 */
+  }
 
-}
+  header {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    margin-top: 2px;
+    background-image: url('bj.gif'); /* 替换 'your-image.jpg' 为你想要的图片的路径 */
+    background-size: cover; /* 使背景图片覆盖整个页面 */
+    background-repeat: no-repeat; /* 禁止背景图片重复 */
+  }
 
-header {
-  display: flex;
-  align-items: center;
-  padding: 2px;
-  /* background-color: #fff; */
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-  margin-top: 2px;
-  background-image: url('bj.gif'); /* 替换 'your-image.jpg' 为你想要的图片的路径 */
-  background-size: cover; /* 使背景图片覆盖整个页面 */
-  background-repeat: no-repeat; /* 禁止背景图片重复 */
-}
-.artistic-title {
-  margin: 10px;
-  font-size: 5em;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-  color: #333;
-  text-shadow: 2px 2px 4px #aaa;
-}
-.search-container {
-  /* text-align: center; 将搜索容器居中对齐 */
-  width: 50%; /* 设置搜索容器宽度占屏幕的一半 */
-  margin: 0 150px; /* 设置搜索容器左右外边距 */
-}
-#globalSearch {
-  width: 100%; /* 设置搜索框宽度占屏幕的一半 */
-  padding: 10px 20px; /* 增加内边距使其更加美观 */
-  font-size: 16px;
-  border: 2px solid #444; /* 增加边框厚度使其更加清晰 */
-  border-radius: 4px;
-  display: block;
-  /* margin: 0 auto; 将搜索框居中对齐 */
-}
+  .artistic-title {
+    margin: 10px;
+    font-size: 5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px #aaa;
+  }
 
-.container {
-  display: flex;
-  height: calc(100vh - 100px); /* Adjust height based on header height */
-  border: 1px solid #2980b9; /* 设置边框为蓝色，1像素宽 */
-}
+  .search-container {
+    width: 50%;
+    margin: 0 150px;
+  }
 
-.sidebar {
-  width: 250px;
-  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-  color: #fff;
-  padding: 10px;
-  box-sizing: border-box;
-  transition: width 0.3s, padding 0.3s;
-  font-size: 20px;
-  border-right: 1px solid #ddd;
-  overflow-y: auto; /* 侧边栏内容过多时增加滚动条 */
-  border: #2980b9;
+  #globalSearch {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    display: block;
+  }
 
-}
+  .container {
+    display: flex;
+    height: calc(100vh - 100px); /* Adjust height based on header height */
+  }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
+  .sidebar {
+    width: 250px;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* 侧边栏内容过多时增加滚动条 */
+  }
 
-.sidebar ul li {
-  padding: 10px 30px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  border: 1px solid rgb(255, 254, 254); /* 设置边框为黑色，1像素宽 */
-  margin-top: 5px;
-}
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-.sidebar ul li:hover {
-  background-color: #3d566e;
-}
+  .sidebar ul li {
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border: 1px solid rgb(255, 254, 254); /* 设置边框为黑色，1像素宽 */
+    margin-top: 5px;
+  }
 
-.content {
-  flex: 1;
-  padding: 30px;
-  box-sizing: border-box;
-  /* background-color: #fff; */
-  overflow-y: auto;
-}
+  .sidebar ul li:hover {
+    background-color: #3d566e;
+  }
 
-.note {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #e7e7e7;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
+  .content {
+    flex: 1;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
 
-.note:hover {
-  background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
-  box-shadow: 0 4px 8px rgba(89, 172, 11, 0.15);
-}
+  .right-sidebar {
+    width: 200px;
+    background-color: #f5f5f5;
+    border-left: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
 
-.note h3 {
-  margin: 0;
-  margin-right: 20px;
-  white-space: nowrap;
-  color: #34495e;
-}
+  .right-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-.note p {
-  margin: 0;
-  flex: 1;
-  color: #000000;
-}
+  .right-sidebar ul li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
 
-.copy-button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  .right-sidebar ul li:hover,
+  .right-sidebar ul li.active {
+    background-color: #3498db;
+    color: white;
+  }
 
-.copy-button:hover {
-  background-color: #2980b9;
-}
+  .note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
 
-.copy-button.copied {
-  background-color: #2ecc71;
-  color: #fff;
-}
+  .note:hover {
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    box-shadow: 0 4px 8px rgba(89, 172, 11, 0.15);
+  }
+
+  .note h3 {
+    margin: 0;
+    margin-right: 20px;
+    white-space: nowrap;
+    color: #34495e;
+  }
+
+  .note p {
+    margin: 0;
+    flex: 1;
+    color: #000000;
+  }
+
+  .copy-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .copy-button:hover {
+    background-color: #2980b9;
+  }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: #fff;
+  }

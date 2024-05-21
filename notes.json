@@ -85,6 +85,55 @@
         "title": "顺便指定索引",
         "content": "CREATE TABLE table_name (<br/>column1_name data_type,<br/>column2_name data_type,<br/>...,<br/>INDEX index_name (column1 [ASC|DESC], column2 [ASC|DESC], ...));"
       }
+    ],
+    "删除数据表": [
+      { "title": "删除数据表", "content": "DROP TABLE table_name ;" }
+    ],
+    "修改数据表结构": [
+      {
+        "title": "添加新字段",
+        "content": "ALTER TABLE table_name ADD column_name data_type;"
+      },
+      {
+        "title": "修改字段类型",
+        "content": "ALTER TABLE table_name MODIFY column_name new_data_type;"
+      },
+      {
+        "title": "修改字段名称",
+        "content": "ALTER TABLE table_name CHANGE old_column_name new_column_name data_type;"
+      },
+      {
+        "title": "删除字段",
+        "content": "ALTER TABLE table_name DROP column_name;"
+      },
+      {
+        "title": "添加主键约束",
+        "content": "ALTER TABLE table_name ADD PRIMARY KEY (column_name);"
+      },
+      {
+        "title": "添加外键约束",
+        "content": "ALTER TABLE table_name ADD FOREIGN KEY (column_name) REFERENCES referenced_table(ref_column_name);"
+      },
+      {
+        "title": "添加普通索引",
+        "content": "ALTER TABLE table_name ADD INDEX index_name (column1 [ASC|DESC], column2 [ASC|DESC], ...);"
+      },
+      {
+        "title": "添加唯一索引",
+        "content": "ALTER TABLE table_name ADD UNIQUE INDEX index_name (column1 [ASC|DESC], column2 [ASC|DESC], ...);"
+      },
+      {
+        "title": "删除索引",
+        "content": "ALTER TABLE table_name DROP INDEX index_name;"
+      },
+      {
+        "title": "重命名表",
+        "content": "ALTER TABLE old_table_name RENAME TO new_table_name;"
+      },
+      {
+        "title": "修改表的存储引擎",
+        "content": "ALTER TABLE table_name ENGINE = new_storage_engine;"
+      }
     ]
   }
 }

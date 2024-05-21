@@ -1,20 +1,39 @@
 async function fetchNotes() {
-  const response = await fetch('notes.json');
-  const data = await response.json();
-  return data;
-}
+    const response = await fetch('notes.json');
+    const data = await response.json();
+    return data;
+  }
 
-async function showCategory(category) {
+  async function showCategory(category) {
     const notesContent = document.getElementById("notesContent");
+    const rightSidebar = document.getElementById("rightSidebar");
     notesContent.innerHTML = "";
+    rightSidebar.innerHTML = "";
+
     const notes = await fetchNotes();
     const subcategories = notes[category];
 
     for (const subcategory in subcategories) {
       const subcategoryNotes = subcategories[subcategory];
+
+      // Create subcategory title and anchor
+      const subcategoryAnchor = document.createElement("a");
+      subcategoryAnchor.name = `${category}-${subcategory}`;
+      notesContent.appendChild(subcategoryAnchor);
+
       const subcategoryTitle = document.createElement("h2");
       subcategoryTitle.textContent = subcategory;
       notesContent.appendChild(subcategoryTitle);
+
+      // Create right sidebar link
+      const sidebarItem = document.createElement("li");
+      sidebarItem.textContent = subcategory;
+      sidebarItem.onclick = () => {
+        document.getElementsByName(`${category}-${subcategory}`)[0].scrollIntoView({
+          behavior: 'smooth'
+        });
+      };
+      rightSidebar.appendChild(sidebarItem);
 
       subcategoryNotes.forEach((note, index) => {
         const noteDiv = document.createElement("div");
@@ -27,24 +46,42 @@ async function showCategory(category) {
         notesContent.appendChild(noteDiv);
       });
     }
+
+    // Add scroll event listener to highlight current subcategory
+    notesContent.onscroll = () => {
+      let activeItem = null;
+      for (const subcategory in subcategories) {
+        const subcategoryAnchor = document.getElementsByName(`${category}-${subcategory}`)[0];
+        const rect = subcategoryAnchor.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+          activeItem = subcategory;
+          break;
+        }
+      }
+      const rightSidebarItems = rightSidebar.getElementsByTagName("li");
+      for (const item of rightSidebarItems) {
+        item.classList.remove("active");
+        if (item.textContent === activeItem) {
+          item.classList.add("active");
+        }
+      }
+    };
   }
 
-function copyContent(contentId, buttonId) {
-  const content = document.getElementById(contentId).innerText;
-  navigator.clipboard.writeText(content).then(() => {
+  function copyContent(contentId, buttonId) {
+    const content = document.getElementById(contentId).textContent;
+    navigator.clipboard.writeText(content).then(() => {
       const button = document.getElementById(buttonId);
-      button.innerText = "已复制";
       button.classList.add("copied");
+      button.textContent = "已复制";
       setTimeout(() => {
-          button.innerText = "复制";
-          button.classList.remove("copied");
+        button.classList.remove("copied");
+        button.textContent = "复制";
       }, 2000);
-  }).catch((err) => {
-      console.error("复制失败:", err);
-  });
-}
+    });
+  }
 
-async function globalSearch() {
+  async function globalSearch() {
     const query = document.getElementById('globalSearch').value.toLowerCase();
     const notesContent = document.getElementById('notesContent');
     notesContent.innerHTML = "";
@@ -69,8 +106,3 @@ async function globalSearch() {
       }
     }
   }
-
-// 默认显示工作笔记
-document.addEventListener("DOMContentLoaded", () => {
-  showCategory("git");
-});
