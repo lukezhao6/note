@@ -5,20 +5,29 @@ async function fetchNotes() {
 }
 
 async function showCategory(category) {
-  const notesContent = document.getElementById("notesContent");
-  notesContent.innerHTML = "";
-  const notes = await fetchNotes();
-  notes[category].forEach((note, index) => {
-      const noteDiv = document.createElement("div");
-      noteDiv.className = "note";
-      noteDiv.innerHTML = `
+    const notesContent = document.getElementById("notesContent");
+    notesContent.innerHTML = "";
+    const notes = await fetchNotes();
+    const subcategories = notes[category];
+
+    for (const subcategory in subcategories) {
+      const subcategoryNotes = subcategories[subcategory];
+      const subcategoryTitle = document.createElement("h2");
+      subcategoryTitle.textContent = subcategory;
+      notesContent.appendChild(subcategoryTitle);
+
+      subcategoryNotes.forEach((note, index) => {
+        const noteDiv = document.createElement("div");
+        noteDiv.className = "note";
+        noteDiv.innerHTML = `
           <h3>${note.title}</h3>
-          <p id="note-content-${category}-${index}">${note.content}</p>
-          <button class="copy-button" id="copy-button-${category}-${index}" onclick="copyContent('note-content-${category}-${index}', 'copy-button-${category}-${index}')">复制</button>
-      `;
-      notesContent.appendChild(noteDiv);
-  });
-}
+          <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
+          <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
+        `;
+        notesContent.appendChild(noteDiv);
+      });
+    }
+  }
 
 function copyContent(contentId, buttonId) {
   const content = document.getElementById(contentId).innerText;
@@ -36,25 +45,30 @@ function copyContent(contentId, buttonId) {
 }
 
 async function globalSearch() {
-  const query = document.getElementById('globalSearch').value.toLowerCase();
-  const notesContent = document.getElementById('notesContent');
-  notesContent.innerHTML = "";
-  const notes = await fetchNotes();
-  for (const category in notes) {
-      notes[category].forEach((note, index) => {
+    const query = document.getElementById('globalSearch').value.toLowerCase();
+    const notesContent = document.getElementById('notesContent');
+    notesContent.innerHTML = "";
+    const notes = await fetchNotes();
+
+    for (const category in notes) {
+      const subcategories = notes[category];
+      for (const subcategory in subcategories) {
+        const subcategoryNotes = subcategories[subcategory];
+        subcategoryNotes.forEach((note, index) => {
           if (note.title.toLowerCase().includes(query) || note.content.toLowerCase().includes(query)) {
-              const noteDiv = document.createElement("div");
-              noteDiv.className = "note";
-              noteDiv.innerHTML = `
-                  <h3>${note.title}</h3>
-                  <p id="note-content-${category}-${index}">${note.content}</p>
-                  <button class="copy-button" id="copy-button-${category}-${index}" onclick="copyContent('note-content-${category}-${index}', 'copy-button-${category}-${index}')">复制</button>
-              `;
-              notesContent.appendChild(noteDiv);
+            const noteDiv = document.createElement("div");
+            noteDiv.className = "note";
+            noteDiv.innerHTML = `
+              <h3>${note.title}</h3>
+              <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
+              <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
+            `;
+            notesContent.appendChild(noteDiv);
           }
-      });
+        });
+      }
+    }
   }
-}
 
 // 默认显示工作笔记
 document.addEventListener("DOMContentLoaded", () => {
