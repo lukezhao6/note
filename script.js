@@ -1,6 +1,6 @@
 async function fetchOneNotes(category) {
   const notes = {};
-  const response = await fetch(`json /${category}.json`);
+  const response = await fetch(`json/${category}.json`);
   const data = await response.json();
   notes[category] = data;
   return notes;
