@@ -95,17 +95,25 @@ body {
   }
 
   .right-sidebar ul li {
-    padding: 8px;
+    padding: 12px; /* 增加行间距 */
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 8px; /* 增加间距 */
     border-radius: 4px;
+    border: 1px solid transparent; /* 初始透明边框用于过渡效果 */
   }
 
-  .right-sidebar ul li:hover,
-  .right-sidebar ul li.active {
+  .right-sidebar ul li:hover {
     background-color: #3498db;
     color: white;
+    transform: scale(1.05); /* 增加点击动作效果 */
+    border: 1px solid #2980b9; /* 边框颜色过渡 */
+  }
+
+  .right-sidebar ul li.active {
+    background-color: #2980b9;
+    color: white;
+    border: 1px solid #1f6391; /* 突出显示的边框颜色 */
   }
 
   .note {

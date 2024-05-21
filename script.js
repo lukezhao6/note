@@ -106,3 +106,8 @@ async function fetchNotes() {
       }
     }
   }
+
+  // 默认显示git笔记
+document.addEventListener("DOMContentLoaded", () => {
+    showCategory("git");
+  });
