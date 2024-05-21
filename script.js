@@ -13,7 +13,7 @@ async function fetchAllNotes() {
   const notes = {};
 
   for (const category of categories) {
-    const response = await fetch(`json /${category}.json`);
+    const response = await fetch(`json/${category}.json`);
     const data = await response.json();
     notes[category] = data;
   }
