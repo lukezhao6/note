@@ -11,7 +11,7 @@ header {
   border-bottom: 1px solid #ddd;
   text-align: center;
   margin-top: 2px;
-  background-image: url("bj.gif"); /* 替换 'your-image.jpg' 为你想要的图片的路径 */
+  background-image: url("./img/bj.gif"); /* 替换为你想要的图片的路径 */
   background-size: cover; /* 使背景图片覆盖整个页面 */
   background-repeat: no-repeat; /* 禁止背景图片重复 */
 }
