@@ -81,6 +81,7 @@ async function showCategory(category) {
       item.classList.remove("active");
       if (item.textContent === activeItem) {
         item.classList.add("active");
+        item.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
     });
   };
