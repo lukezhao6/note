@@ -333,21 +333,133 @@
         "content": "cp -f sourcefile.txt destination/"
       }
     ],
-    "diff": [
-      { "title": "22222", "content": "2222" },
-      { "title": "2222", "content": "2222" }
+    "rm:删除文件或目录": [
+      { "title": "删除文件", "content": "rm filename.txt" },
+      {
+        "title": "删除多个文件",
+        "content": "rm file1.txt file2.txt file3.txt"
+      },
+      { "title": "递归删除目录", "content": "rm -r directory/" },
+      { "title": "交互式删除", "content": "rm -i filename.txt" },
+      { "title": "强制删除", "content": "rm -f filename.txt" }
     ],
-    "diff": [
-      { "title": "22222", "content": "2222" },
-      { "title": "2222", "content": "2222" }
+    "mv:移动文件或目录": [
+      { "title": "移动文件或目录", "content": "mv source.txt destination/" },
+      {
+        "title": "移动并重命名文件或目录",
+        "content": "mv source.txt destination/newname.txt"
+      },
+      { "title": "重命名文件或目录", "content": "mv oldname.txt newname.txt" },
+      {
+        "title": "移动目录及其内容",
+        "content": "mv -r sourcedir/ destination/"
+      }
     ],
-    "diff": [
-      { "title": "22222", "content": "2222" },
-      { "title": "2222", "content": "2222" }
+    "wc:统计文件的行数、字数和字节数": [
+      { "title": "统计文件行数", "content": "wc -l filename.txt" },
+      { "title": "统计文件字数", "content": "wc -w filename.txt" },
+      { "title": "统计文件字节数", "content": "wc -c filename.txt" },
+      { "title": "同时统计行数、字数和字节数", "content": "wc filename.txt" },
+      { "title": "统计多个文件", "content": "wc file1.txt file2.txt" }
     ],
-    "diff": [
-      { "title": "22222", "content": "2222" },
-      { "title": "2222", "content": "2222" }
+    "mkdir:创建新目录": [
+      { "title": "创建单个目录", "content": "mkdir directory_name" },
+      { "title": "创建多个目录", "content": "mkdir dir1 dir2 dir3" },
+      { "title": "递归创建目录", "content": "mkdir -p path/to/directory" },
+      {
+        "title": "创建具有特定权限的目录",
+        "content": "mkdir -m 755 directory_name"
+      }
+    ],
+    "rmdir:删除空目录": [
+      { "title": "删除单个空目录", "content": "rmdir directory_name" },
+      { "title": "删除多个空目录", "content": "rmdir dir1 dir2 dir3" },
+      { "title": "递归删除目录", "content": "rm -r directory_name" }
+    ],
+    "ln:创建链接": [
+      { "title": "创建硬链接", "content": "ln source_file hard_link" },
+      {
+        "title": "创建符号链接（软链接）",
+        "content": "ln -s source_file symbolic_link"
+      },
+      {
+        "title": "创建硬链接到目录",
+        "content": "ln -d source_directory hard_link_to_directory"
+      },
+      { "title": "查看链接信息", "content": "ls -l filename" },
+      { "title": "查看符号链接的目标", "content": "ls -l symbolic_link" }
+    ],
+    "chmod:修改文件或目录的权限": [
+      { "title": "修改文件权限", "content": "chmod 755 file.txt" },
+      { "title": "修改目录权限", "content": "chmod -R 755 folder/" }
+    ],
+    "umask:设置文件创建时的默认权限掩码": [
+      { "title": "查看当前默认权限掩码", "content": "umask" },
+      { "title": "设置默认权限掩码", "content": "umask 0022" }
+    ],
+    "chgrp:修改文件或目录的所属组": [
+      { "title": "chgrp用法", "content": "chgrp new_group file_or_directory" },
+      {
+        "title": "递归修改目录及其内容的所属组",
+        "content": "chgrp -R new_group directory/"
+      }
+    ],
+    "chown:修改文件或目录的所有者和所属组": [
+      {
+        "title": "修改文件或目录的所有者",
+        "content": "chown new_owner file_or_directory"
+      },
+      {
+        "title": "同时修改文件或目录的所有者和所属组",
+        "content": "chown new_owner:new_group file_or_directory"
+      },
+      {
+        "title": "递归修改目录及其所有内容的所有者和所属组",
+        "content": "chown -R new_owner:new_group directory"
+      }
+    ],
+    "ps:显示当前运行进程的状态信息": [
+      { "title": "显示当前用户的进程", "content": "ps" },
+      { "title": "显示所有进程", "content": "ps -e" },
+      { "title": "显示详细信息", "content": "ps -f" },
+      { "title": "按特定用户显示进程", "content": "ps -u username" },
+      { "title": "查找特定进程", "content": "ps -ef | grep process_name" }
+    ],
+    "kill:终止正在运行的进程": [
+      { "title": "终止指定进程", "content": "kill PID" },
+      { "title": "强制终止进程", "content": "kill -9 PID" },
+      { "title": "终止一组相关进程", "content": "kill -TERM -PGID" },
+      { "title": "按名称终止进程", "content": "kill $(pgrep process_name)" }
+    ],
+    "gzip:压缩文件": [
+      { "title": "压缩文件", "content": "gzip filename" },
+      { "title": "压缩多个文件", "content": "gzip file1 file2 file3" },
+      { "title": "保留原始文件", "content": "gzip -k filename" },
+      { "title": "递归压缩目录", "content": "gzip -r directory" }
+    ],
+    "unzip:解压缩压缩文件": [
+      { "title": "解压文件", "content": "unzip filename.zip" },
+      {
+        "title": "指定目标目录",
+        "content": "unzip filename.zip -d target_directory"
+      }
+    ],
+    "tar:创建和解压缩归档文件": [
+      {
+        "title": "创建归档文件",
+        "content": "tar -cvf archive.tar file1 file2 file3"
+      },
+      { "title": "解压归档文件", "content": "tar -xvf archive.tar" },
+      {
+        "title": "解压到指定目录",
+        "content": "tar -xvf archive.tar -C target_directory"
+      },
+      { "title": "查看归档文件内容", "content": "tar -tvf archive.tar" },
+      {
+        "title": "创建归档文件并压缩",
+        "content": "tar -czvf archive.tar.gz file1 file2 file3"
+      },
+      { "title": "解压缩归档文件", "content": "tar -xzvf archive.tar.gz" }
     ]
   },
 
