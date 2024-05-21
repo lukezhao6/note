@@ -1,10 +1,8 @@
 async function fetchOneNotes(category) {
   const notes = {};
-
   const response = await fetch(`json /${category}.json`);
   const data = await response.json();
   notes[category] = data;
-
   return notes;
 }
 
@@ -26,8 +24,8 @@ async function showCategory(category) {
   notesContent.innerHTML = "";
   rightSidebar.innerHTML = "<ul></ul>";
 
-  const subcategories = await fetchOneNotes(category);
-  // const subcategories = notes[category];
+  const notes = await fetchOneNotes(category);
+  const subcategories = notes[category];
 
   for (const subcategory in subcategories) {
     const subcategoryNotes = subcategories[subcategory];
