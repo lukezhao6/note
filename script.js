@@ -1,4 +1,14 @@
-async function fetchNotes() {
+async function fetchOneNotes(category) {
+  const notes = {};
+
+  const response = await fetch(`json /${category}.json`);
+  const data = await response.json();
+  notes[category] = data;
+
+  return notes;
+}
+
+async function fetchAllNotes() {
   const categories = ["git", "jvm", "mysql", "mysql-plus", "linux", "docker"];
   const notes = {};
 
@@ -16,8 +26,8 @@ async function showCategory(category) {
   notesContent.innerHTML = "";
   rightSidebar.innerHTML = "<ul></ul>";
 
-  const notes = await fetchNotes();
-  const subcategories = notes[category];
+  const subcategories = await fetchOneNotes(category);
+  // const subcategories = notes[category];
 
   for (const subcategory in subcategories) {
     const subcategoryNotes = subcategories[subcategory];
@@ -103,7 +113,7 @@ async function globalSearch() {
   }
 
   notesContent.innerHTML = "";
-  const notes = await fetchNotes();
+  const notes = await fetchAllNotes();
 
   for (const category in notes) {
     const subcategories = notes[category];
