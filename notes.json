@@ -321,9 +321,17 @@
       },
       { "title": "只显示不同的行", "content": "diff -q file1.txt file2.txt" }
     ],
-    "diff": [
-      { "title": "22222", "content": "2222" },
-      { "title": "2222", "content": "2222" }
+    "cp:复制文件或目录": [
+      { "title": "复制文件", "content": "cp sourcefile.txt destination/" },
+      {
+        "title": "复制多个文件到目录",
+        "content": "cp file1.txt file2.txt file3.txt destination/"
+      },
+      { "title": "递归复制目录", "content": "cp -r sourcedir/ destination/" },
+      {
+        "title": "覆盖已存在的目标文件",
+        "content": "cp -f sourcefile.txt destination/"
+      }
     ],
     "diff": [
       { "title": "22222", "content": "2222" },
