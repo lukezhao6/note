@@ -108,6 +108,8 @@ async function globalSearch() {
     rightSidebar.classList.add("hidden");
   } else {
     rightSidebar.classList.remove("hidden");
+    //默认显示git笔记
+    showCategory("git");
   }
 
   notesContent.innerHTML = "";
