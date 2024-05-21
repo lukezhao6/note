@@ -1,9 +1,9 @@
 async function fetchNotes() {
-  const categories = ["git", "jvm", "mysql", "mysql-plus", "linux"];
+  const categories = ["git", "jvm", "mysql", "mysql-plus", "linux", "docker"];
   const notes = {};
 
   for (const category of categories) {
-    const response = await fetch(json / `${category}.json`);
+    const response = await fetch(`json /${category}.json`);
     const data = await response.json();
     notes[category] = data;
   }
