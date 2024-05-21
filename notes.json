@@ -227,6 +227,130 @@
     ]
   },
 
+  "linux": {
+    "cat:连接文件并将其内容显示在标准输出（通常是终端）上": [
+      { "title": "查看文件内容", "content": "cat filename.txt" },
+      {
+        "title": "合并多个文件",
+        "content": "cat file1.txt file2.txt > combined.txt"
+      },
+      { "title": "创建新文件并向其中写入内容", "content": "cat > newfile.txt" },
+      { "title": "追加内容到现有文件", "content": "cat >> existingfile.txt" },
+      { "title": "显示行号", "content": "cat -n filename.txt" }
+    ],
+    "more:逐页查看文件内容": [
+      { "title": "查看文件内容", "content": "more filename.txt" }
+    ],
+    "less:以交互式方式查看文本文件内容": [
+      { "title": "查看文件内容", "content": "less filename.txt" }
+    ],
+    "head:显示文件的开头部分": [
+      { "title": "显示文件开头部分", "content": "head filename.txt" },
+      { "title": "指定显示的行数", "content": "head -n 5 filename.txt" },
+      {
+        "title": "显示多个文件的开头部分",
+        "content": "head file1.txt file2.txt"
+      }
+    ],
+    "tail:显示文件的末尾部分": [
+      { "title": "显示文件末尾部分", "content": "tail filename.txt" },
+      { "title": "指定显示的行数", "content": "tail -n 5 filename.txt" },
+      { "title": "实时监视文件", "content": "tail -f filename.txt" },
+      {
+        "title": "显示多个文件的末尾部分",
+        "content": "tail file1.txt file2.txt"
+      }
+    ],
+    "touch:创建空白文件或者更改文件的访问和修改时间戳": [
+      { "title": "创建空白文件", "content": "touch filename.txt" },
+      {
+        "title": "已存在的文件更改文件的访问和修改时间戳",
+        "content": "touch existingfile.txt"
+      },
+      {
+        "title": "同时创建多个文件",
+        "content": "touch file1.txt file2.txt file3.txt"
+      },
+      {
+        "title": "指定时间戳",
+        "content": "touch -t 202205210930.45 filename.txt"
+      },
+      {
+        "title": "创建具有指定时间戳的文件",
+        "content": "touch -d \"2022-05-21 09:30:45\" filename.txt"
+      }
+    ],
+    "grep:强大的文本搜索工具": [
+      { "title": "在文件中搜索", "content": "grep pattern filename.txt" },
+      {
+        "title": "在多个文件中搜索",
+        "content": "grep pattern file1.txt file2.txt"
+      },
+      { "title": "递归搜索目录", "content": "grep -r pattern directory/" },
+      {
+        "title": "搜索时忽略大小写",
+        "content": "grep -i pattern filename.txt"
+      },
+      { "title": "输出行号", "content": "grep -n pattern filename.txt" }
+    ],
+    "sort:对文本文件的内容进行排序": [
+      { "title": "基本排序", "content": "sort filename.txt" },
+      { "title": "反向排序", "content": "sort -r filename.txt" },
+      { "title": "忽略大小写", "content": "sort -f filename.txt" },
+      { "title": "指定字段排序", "content": "sort -k 2,2 filename.txt" },
+      { "title": "去重并排序", "content": "sort -u filename.txt" }
+    ],
+    "uniq:过滤或报告文件中的重复行": [
+      { "title": "过滤重复行", "content": "uniq filename.txt" },
+      { "title": "计算重复行的数量", "content": "uniq -c filename.txt" },
+      { "title": "仅显示重复行", "content": "uniq -d filename.txt" },
+      { "title": "仅显示不重复的行", "content": "uniq -u filename.txt" }
+    ],
+    "comm:比较两个已排序的文件并显示它们的交集、差集和并集": [
+      { "title": "用法", "content": "comm file1.txt file2.txt" }
+    ],
+    "diff:比较两个文件或目录的内容，并显示它们之间的差异": [
+      { "title": "比较两个文件", "content": "diff file1.txt file2.txt" },
+      {
+        "title": "递归比较两个目录",
+        "content": "diff -r directory1/ directory2/"
+      },
+      {
+        "title": "将比较结果输出到文件",
+        "content": "diff file1.txt file2.txt > diff_result.txt"
+      },
+      { "title": "只显示不同的行", "content": "diff -q file1.txt file2.txt" }
+    ],
+    "diff": [
+      { "title": "22222", "content": "2222" },
+      { "title": "2222", "content": "2222" }
+    ],
+    "diff": [
+      { "title": "22222", "content": "2222" },
+      { "title": "2222", "content": "2222" }
+    ],
+    "diff": [
+      { "title": "22222", "content": "2222" },
+      { "title": "2222", "content": "2222" }
+    ],
+    "diff": [
+      { "title": "22222", "content": "2222" },
+      { "title": "2222", "content": "2222" }
+    ],
+    "diff": [
+      { "title": "22222", "content": "2222" },
+      { "title": "2222", "content": "2222" }
+    ]
+  },
+
+  "docker": {
+    "文件操作命令": [{ "title": "111", "content": "11111" }],
+    "test2": [
+      { "title": "22222", "content": "2222" },
+      { "title": "2222", "content": "2222" }
+    ]
+  },
+
   "test": {
     "test1": [{ "title": "111", "content": "11111" }],
     "test2": [
