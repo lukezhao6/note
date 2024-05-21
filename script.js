@@ -1,7 +1,13 @@
 async function fetchNotes() {
-  const response = await fetch("notes.json");
-  const data = await response.json();
-  return data;
+  const categories = ["git", "jvm", "mysql", "mysql-plus", "linux"];
+  const notes = {};
+
+  for (const category of categories) {
+    const response = await fetch(json / `${category}.json`);
+    const data = await response.json();
+    notes[category] = data;
+  }
+  return notes;
 }
 
 async function showCategory(category) {

@@ -1,0 +1,50 @@
+{
+  "正则的使用": [
+    {
+      "title": "查询以'ad'为开头的所有数据",
+      "content": "SELECT user_name FROM User WHERE user_name REGEXP '^ad';"
+    },
+    {
+      "title": "查询以'ad'为结尾的所有数据",
+      "content": "SELECT user_name FROM User WHERE user_name REGEXP 'ad$';"
+    },
+    {
+      "title": "查询包含'adv'所有数据",
+      "content": "SELECT user_name FROM User WHERE user_name REGEXP 'adv';"
+    },
+    {
+      "title": "查询包含'ad'或'ei'所有数据",
+      "content": "SELECT user_name FROM User WHERE user_name REGEXP 'ad|ei';"
+    },
+    {
+      "title": "查询包含[a-d]中的任意一字符的数据",
+      "content": "SELECT user_name FROM User WHERE user_name REGEXP '[a-d]';"
+    },
+    {
+      "title": "查询不以a-j开头的任意数据",
+      "content": "SELECT user_name FROM User WHERE user_name REGEXP '^[a-j]';"
+    }
+  ],
+  "时间的处理": [
+    {
+      "title": "若是传入的参数为时间戳",
+      "content": "created_at BETWEEN FROM_UNIXTIME(:begainTime) AND FROM_UNIXTIME(:endTime)"
+    },
+    {
+      "title": "转换时区",
+      "content": "CONVERT_TZ(created_at, '+00:00','+08:00')"
+    },
+    {
+      "title": "转换时间格式",
+      "content": "DATE_FORMAT(created_at,'%Y-%m-%d')"
+    },
+    {
+      "title": "当前时间减少8天",
+      "content": "DATE_SUB(NOW(), INTERVAL 8 DAY)"
+    },
+    {
+      "title": "求给定时间和当前时间的时间差",
+      "content": "TIMESTAMPDIFF(DAY,created_at,NOW()) days"
+    }
+  ]
+}
