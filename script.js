@@ -88,6 +88,14 @@ function copyContent(contentId, buttonId) {
 async function globalSearch() {
   const query = document.getElementById("globalSearch").value.toLowerCase();
   const notesContent = document.getElementById("notesContent");
+  const rightSidebar = document.getElementById("rightSidebar");
+
+  if (query) {
+    rightSidebar.classList.add("hidden");
+  } else {
+    rightSidebar.classList.remove("hidden");
+  }
+
   notesContent.innerHTML = "";
   const notes = await fetchNotes();
 
@@ -103,10 +111,10 @@ async function globalSearch() {
           const noteDiv = document.createElement("div");
           noteDiv.className = "note";
           noteDiv.innerHTML = `
-              <h3>${note.title}</h3>
-              <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
-              <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
-            `;
+            <h3>${note.title}</h3>
+            <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
+            <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
+          `;
           notesContent.appendChild(noteDiv);
         }
       });

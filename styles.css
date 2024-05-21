@@ -116,7 +116,9 @@ header {
   color: white;
   border: 1px solid #1f6391; /* 突出显示的边框颜色 */
 }
-
+.hidden {
+  display: none;
+}
 .note {
   display: flex;
   justify-content: space-between;
