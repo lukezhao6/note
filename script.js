@@ -28,7 +28,7 @@ async function showCategory(category) {
 
   notesContent.innerHTML = "";
   rightSidebar.innerHTML = "<ul></ul>";
-
+  rightSidebar.classList.remove("hidden");
   const notes = await fetchOneNotes(category);
   const subcategories = notes[category];
 
