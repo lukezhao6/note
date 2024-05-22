@@ -21,6 +21,11 @@ async function fetchAllNotes() {
 async function showCategory(category) {
   const notesContent = document.getElementById("notesContent");
   const rightSidebar = document.getElementById("rightSidebar");
+  const searchBar = document.getElementById("globalSearch");
+
+  // Clear the search bar
+  searchBar.value = "";
+
   notesContent.innerHTML = "";
   rightSidebar.innerHTML = "<ul></ul>";
 
