@@ -130,14 +130,13 @@ async function globalSearch() {
         const noteTitle = note.title.toLowerCase();
         const noteContent = note.content.toLowerCase();
 
-        const titleMatches = keywords.every((keyword) =>
-          noteTitle.includes(keyword)
-        );
-        const contentMatches = keywords.every((keyword) =>
-          noteContent.includes(keyword)
+        // Check if all keywords are in either title or content
+        const allKeywordsMatch = keywords.every(
+          (keyword) =>
+            noteTitle.includes(keyword) || noteContent.includes(keyword)
         );
 
-        if (titleMatches || contentMatches) {
+        if (allKeywordsMatch) {
           const noteDiv = document.createElement("div");
           noteDiv.className = "note";
           noteDiv.innerHTML = `
