@@ -114,22 +114,30 @@ async function globalSearch() {
     rightSidebar.classList.add("hidden");
   } else {
     rightSidebar.classList.remove("hidden");
-    //默认显示git笔记
+    // 默认显示git笔记
     showCategory("git");
   }
 
   notesContent.innerHTML = "";
   const notes = await fetchAllNotes();
+  const keywords = query.split(" ");
 
   for (const category in notes) {
     const subcategories = notes[category];
     for (const subcategory in subcategories) {
       const subcategoryNotes = subcategories[subcategory];
       subcategoryNotes.forEach((note, index) => {
-        if (
-          note.title.toLowerCase().includes(query) ||
-          note.content.toLowerCase().includes(query)
-        ) {
+        const noteTitle = note.title.toLowerCase();
+        const noteContent = note.content.toLowerCase();
+
+        const titleMatches = keywords.every((keyword) =>
+          noteTitle.includes(keyword)
+        );
+        const contentMatches = keywords.every((keyword) =>
+          noteContent.includes(keyword)
+        );
+
+        if (titleMatches || contentMatches) {
           const noteDiv = document.createElement("div");
           noteDiv.className = "note";
           noteDiv.innerHTML = `
