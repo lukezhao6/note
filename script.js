@@ -143,3 +143,6 @@ async function globalSearch() {
 document.addEventListener("DOMContentLoaded", () => {
   showCategory("git");
 });
+document.addEventListener("DOMContentLoaded", (event) => {
+  fetchAllNotes();
+});
