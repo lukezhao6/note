@@ -67,6 +67,7 @@ header {
   transition: background-color 0.3s;
   border: 1px solid rgb(255, 254, 254); /* 设置边框为黑色，1像素宽 */
   margin-top: 5px;
+  background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
 }
 
 .sidebar ul li:hover {
