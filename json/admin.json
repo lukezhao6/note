@@ -1,0 +1,24 @@
+{
+  "简介": [
+    {
+      "title": "这是个记录命令行的网站，正在逐渐完善中",
+      "content": "其实就是各种命令"
+    },
+    {
+      "title": "不对命令做过多的解释",
+      "content": "想知道命令是干啥的可以复制出来，在大模型上查看"
+    },
+    {
+      "title": "搜索功能很是强大",
+      "content": "可以快速查看各个命令"
+    },
+    {
+      "title": "github地址",
+      "content": "https://github.com/lukezhao6/note"
+    },
+    {
+      "title": "有好的建议或者啥啥啥的,可以提issue",
+      "content": "https://github.com/lukezhao6/note/issues/new"
+    }
+  ]
+}

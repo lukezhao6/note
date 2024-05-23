@@ -7,7 +7,15 @@ async function fetchOneNotes(category) {
 }
 
 async function fetchAllNotes() {
-  const categories = ["git", "jvm", "mysql", "mysql-plus", "linux", "docker"];
+  const categories = [
+    "admin",
+    "git",
+    "jvm",
+    "mysql",
+    "mysql-plus",
+    "linux",
+    "docker",
+  ];
   const notes = {};
 
   for (const category of categories) {
@@ -115,7 +123,7 @@ async function globalSearch() {
   } else {
     rightSidebar.classList.remove("hidden");
     // 默认显示git笔记
-    showCategory("git");
+    showCategory("admin");
   }
 
   notesContent.innerHTML = "";
@@ -153,7 +161,7 @@ async function globalSearch() {
 
 // 默认显示git笔记
 document.addEventListener("DOMContentLoaded", () => {
-  showCategory("git");
+  showCategory("admin");
 });
 document.addEventListener("DOMContentLoaded", (event) => {
   fetchAllNotes();
