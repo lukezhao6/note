@@ -1,0 +1,12 @@
+{
+  "常用插件": [
+    {
+      "title": "better-mybatis-generator",
+      "content": "mybatis工具,自动生成代码"
+    },
+    {
+      "title": "RestfulTool2",
+      "content": "查询接口的工具,快捷键：ctrl+alt+/"
+    }
+  ]
+}
