@@ -103,7 +103,7 @@ header {
   margin-bottom: 8px; /* 增加间距 */
   border-radius: 4px;
   border: 1px solid transparent; /* 初始透明边框用于过渡效果 */
-  background-image: linear-gradient(to right, #e7f0fd 100%), #accbee 0%;
+  background-image: linear-gradient(to right, #e7f0fd 0%), #accbee 100%;
 }
 
 .right-sidebar ul li:hover {
@@ -130,7 +130,7 @@ header {
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-image: linear-gradient(to right, #e7f0fd 100%), #accbee 0%;
+  background-image: linear-gradient(to right, #e7f0fd 0%), #accbee 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
