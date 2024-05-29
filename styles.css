@@ -103,8 +103,7 @@ header {
   margin-bottom: 8px; /* 增加间距 */
   border-radius: 4px;
   border: 1px solid transparent; /* 初始透明边框用于过渡效果 */
-  /* background-image: linear-gradient(to right, #e7f0fd 0%), #accbee 100%; */
-  background-color: #e7f0fd;
+  background-image: linear-gradient(to right, #e7f0fd 0%), #accbee 100%;
 }
 
 .right-sidebar ul li:hover {
